@@ -20,7 +20,7 @@ Install the plugin with your preferred package manager:
 
 ```lua
 use("ribelo/taskwarrior.nvim")
-require("taskwarrior.nvim").setup({
+require("taskwarrior_nvim").setup({
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
@@ -37,7 +37,7 @@ require("taskwarrior.nvim").setup({
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
-    -- or 
+    -- or
     config = true
 }
 ```
@@ -49,7 +49,7 @@ require("taskwarrior.nvim").setup({
 ```lua
 {
   filter = { "noice", "nofile" }, -- Filtered buffer_name and buffer_type.
-  task_file_name = ".taskwarrior.json", 
+  task_file_name = ".taskwarrior.json",
   -- After what period of time should a task be halted due to inactivity?
   granulation = 60 * 1000 * 10,
   notify_start = true, -- Should a notification pop up after starting the task?
@@ -58,7 +58,7 @@ require("taskwarrior.nvim").setup({
 }
 ```
 
-### Taskwarrior Command 
+### Taskwarrior Command
 
 Arguments are directly passed to the `task`, and `stdout` is passed to the notification.
 
@@ -71,7 +71,7 @@ Arguments are directly passed to the `task`, and `stdout` is passed to the notif
 ### Telescope
 
 The function `browser` is exported, which takes an array of arguments that is
-passed to the `task export` command, which is usually `ready` report. 
+passed to the `task export` command, which is usually `ready` report.
 
 ```lua
 require("taskwarrior_nvim").browser({"ready"})
@@ -84,12 +84,12 @@ require("taskwarrior_nvim").browser({"ready"})
 mappings = {
     -- add task
     ["<M-a>"] = taskwarrior.cmd({"add", unpack(vim.split(vim.fn.input("Custom command: "))))
-    ["<M-S-d>"] = task:delete 
+    ["<M-S-d>"] = task:delete
     ["<M-d>"] = task:done
     ["<M-s>"] = task:start or task:stop -- toggle
     ["<M-y>"] = vim.fn.setreg("+", task.uuid) -- yank uid to default register
     -- run custom command on task
-    ["<M-c>"] = task:cmd(vim.split(vim.fn.input("Custom command: "))) 
+    ["<M-c>"] = task:cmd(vim.split(vim.fn.input("Custom command: ")))
   }
 ```
 
@@ -108,7 +108,7 @@ lightning-fast and does not consume resources.
 
 ```javascript
 {
-  // uuid: if the task is clearly defined, UUID can be used 
+  // uuid: if the task is clearly defined, UUID can be used
   "uuid": "7a8a5711-48c6-4667-ab27-2fec7d6b6051",
   // description: is ALWAYS a collection of maps."
   "description": [
