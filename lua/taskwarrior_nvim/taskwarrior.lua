@@ -177,7 +177,7 @@ function print_status_line(err, data, j)
 	vim.api.nvim_command("let g:airline#parts#takswarrior.color = 'black'")
 end
 
--- Create a new job object to run a Task Warrior command with arguments 
+-- Create a new job object to run a Task Warrior command with arguments
 local job = make_takswarrior_job({"stats"}, {
 	on_stdout = print_status_line
 })
@@ -269,7 +269,7 @@ M.get_task_by_key = function(k, v)
 	end
 end
 
---[[ 
+--[[
 The function `as_json()` creates and returns a new `Job` object that runs the
 `task export` command with the given arguments.
 
@@ -568,7 +568,7 @@ end
 
 -- vim.pretty_print(task)
 
---[[ 
+--[[
 The function `Task:new()` creates a new instance of a Task object.
 
 ### Input:
@@ -594,7 +594,7 @@ local t = Task:new({
 ```
 --]]
 
---[[ 
+--[[
 The function `Task:cmd()` creates and returns a new `Job` object that runs the
 `task` command on the given `task` with the given arguments.
 
@@ -1072,7 +1072,7 @@ end
 Generates a new Job that retrieves all tasks.
 
 - `on_exit` (`function`): Callback function that gets triggered when the Job
-  completes execution. It accepts two parameters: 
+  completes execution. It accepts two parameters:
 	- `err` (`string`): An error message if the Job execution fails.
 	- `tasks` (`Task[]`, optional): An array of Task objects if the Job executes
 	  successfully.
@@ -1092,7 +1092,7 @@ M.get_tasks(function(err, tasks)
     end
   end
 end)
-``` 
+```
 --]]
 ---@return string?, Task[]?
 M.get_tasks = function()
